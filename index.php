@@ -40,15 +40,14 @@ $f3->route('GET /order', function($f3){
     }
 
     //if it doesnt work with conditional
-    $colors = getColors();
-    $f3->set('colors', $colors);
+    $f3->set('colors', getColors());
 
     $view = new Template();
     echo $view->render('views/pet-order.html');
 });
 
 //order2 route
-$f3->route('POST /order2', function(){
+$f3->route('POST /order2', function($f3){
     //echo "Order Page 2";
     //var_dump($_POST);
     //add data from order page to session array
@@ -58,6 +57,9 @@ $f3->route('POST /order2', function(){
     if(isset($_POST['colors'])){
         $_SESSION['colors'] = $_POST['colors'];
     }
+
+    $f3 ->set('sizes', getSizes());
+    $f3 ->set('accessories', getAccessories());
 
     //display a view
     $view = new Template();
