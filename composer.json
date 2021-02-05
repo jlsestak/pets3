@@ -1,0 +1,16 @@
+{
+  "name": "jsestak2/328/pets3",
+  "authors": [
+    {
+      "name":"Jessica Sestak",
+      "email": "jsestak2@mail.greenriver.edu"
+    },
+    {
+      "name":"Dana Clemmer",
+      "email": "dclemmer2@mail.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
