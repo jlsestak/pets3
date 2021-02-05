@@ -8,31 +8,34 @@
     <title>Order Page, Continued</title>
 </head>
 <body>
-    <h1>Order 2 Page</h1>
+<h1>Order 2 Page</h1>
 
-    <!-- pet's name -->
-    <form method="post" action="order3">
-        <div class="form-group">
-            <label>What's your pet's name?:
-                <input type="text" name="petName">
-            </label>
+<!-- pet's name -->
+<form method="post" action="order3">
+    <div class="form-group">
+        <label>What's your pet's name?:
+            <input type="text" name="petName">
+        </label>
+    </div>
+    <br>
+
+    <label>Pet Size:</label><br>
+    <repeat group="{{ @sizes }}" value="{{ @sizeOption }}">
+        <label class="radioFormat"><input type="radio" name="{{ @sizes }}" id="{{ @sizeOption }}"
+                                          value="{{ @sizeOption }}">&ensp;{{ @sizeOption }}</label>
+    </repeat>
+    <br><br>
+
+    <label>Pet Accessories:</label><br>
+
+    <repeat group="{{ @accessories }}" value="{{ @accessoryOption }}">
+        <div class="form-group col">
+            <label><input type="checkbox" name="accessory[]" value="{{ @accessoryOption }}"> {{ @accessoryOption }}</label>
         </div>
-
-        <repeat group="{{ @sizes }}" value="{{ @sizeOption }}">
-            <option>
-                {{ @sizeOption }}
-            </option>
-        </repeat>
-
-
-        <repeat group="{{ @accessories }}" value="{{ @accessoryOption }}">
-            <option>
-                {{ @accessoryOption }}
-            </option>
-        </repeat>
-        <br>
-        <input type="submit" value="Place Order">
-    </form>
+    </repeat>
+    <br>
+    <input type="submit" value="Place Order">
+</form>
 
 </body>
 </html>
