@@ -11,8 +11,6 @@ session_start();
 require_once('vendor/autoload.php');
 require_once('model/data-layer.php');
 
-//require the autoload file
-require_once('vendor/autoload.php');
 
 //create an instance of the base class
 $f3 = Base::instance();
@@ -27,8 +25,18 @@ $f3->route('GET /', function(){
 });
 
 //order route
-$f3->route('GET /order', function(){
+$f3->route('GET /order', function($f3){
     //echo "Order Page";
+    //Check if the form has been posted
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        //Validate the data
+        if (empty($_POST['pet'])) {
+            $f3->set('colors', getColors());
+        } else {
+            ...
+        }
+    }
+
     $view = new Template();
     echo $view->render('views/pet-order.html');
 });
