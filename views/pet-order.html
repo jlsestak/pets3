@@ -16,11 +16,7 @@
 
         <label for="color">Select a Color:</label>
         <select class="form-control" name="color" id="color">
-            <option>
-                --
-                Select a color
-                --
-            </option>
+            <option>-- Select a color --</option>
             <repeat group="{{ @colors }}" value="{{ @colorOption }}">
                 <option>
                     {{ @colorOption }}

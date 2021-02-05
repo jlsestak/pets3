@@ -17,6 +17,19 @@
                 <input type="text" name="petName">
             </label>
         </div>
+
+        <repeat group="{{ @sizes }}" value="{{ @sizeOption }}">
+            <option>
+                {{ @sizeOption }}
+            </option>
+        </repeat>
+
+
+        <repeat group="{{ @accessories }}" value="{{ @accessoryOption }}">
+            <option>
+                {{ @accessoryOption }}
+            </option>
+        </repeat>
         <br>
         <input type="submit" value="Place Order">
     </form>
