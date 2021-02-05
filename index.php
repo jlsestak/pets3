@@ -30,14 +30,18 @@ $f3->route('GET /order', function($f3){
     //Check if the form has been posted
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         //Validate the data
-        if (empty($_POST['pet'])) {
-            $f3->set('colors', getColors());
+        if (empty($_POST['typeOfPet'])) {
+            $f3->set('colors', '');
         } else {
             $f3->set('colors', 'red');
             $f3->set('colors', 'green');
             $f3->set('colors', 'blue');
         }
     }
+
+    //if it doesnt work with conditional
+    $colors = getColors();
+    $f3->set('colors', $colors);
 
     $view = new Template();
     echo $view->render('views/pet-order.html');
