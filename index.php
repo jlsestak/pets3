@@ -7,6 +7,10 @@ error_reporting(E_ALL);
 //Start a session
 session_start();
 
+//Require the autoload file
+require_once('vendor/autoload.php');
+require_once('model/data-layer.php');
+
 //require the autoload file
 require_once('vendor/autoload.php');
 
