@@ -33,7 +33,9 @@ $f3->route('GET /order', function($f3){
         if (empty($_POST['pet'])) {
             $f3->set('colors', getColors());
         } else {
-            ...
+            $f3->set('colors', 'red');
+            $f3->set('colors', 'green');
+            $f3->set('colors', 'blue');
         }
     }
 
