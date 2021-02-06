@@ -30,7 +30,7 @@
 
     <repeat group="{{ @accessories }}" value="{{ @accessoryOption }}">
         <div class="form-group col">
-            <label><input type="checkbox" name="accessory[]" value="{{ @accessoryOption }}"> {{ @accessoryOption }}</label>
+            <label><input type="checkbox" name="{{ @accessories }}}" value="{{ @accessoryOption }}"> {{ @accessoryOption }}</label>
         </div>
     </repeat>
     <br>
