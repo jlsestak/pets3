@@ -71,12 +71,12 @@ $f3->route('POST /summary', function(){
         $_SESSION['petName'] = $_POST['petName'];
     }
 
-    if(isset($_POST['sizes'])){
-        $_SESSION['sizes'] = $_POST['sizes'];
+    if(isset($_POST['size'])){
+        $_SESSION['size'] = $_POST['size'];
     }
 
-    if(isset($_POST['accessories'])) {
-        $_SESSION['accessories'] = implode(", ", $_POST['accessories']);
+    if(isset($_POST['accessory'])) {
+        $_SESSION['accessory'] = implode(", ", $_POST['accessory']);
     }
 
     //display a view

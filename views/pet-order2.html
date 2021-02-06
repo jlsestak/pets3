@@ -21,7 +21,7 @@
 
     <label>Pet Size:</label><br>
     <repeat group="{{ @sizes }}" value="{{ @sizeOption }}">
-        <label class="radioFormat"><input type="radio" name="{{ @sizes }}" id="{{ @sizeOption }}"
+        <label class="radioFormat"><input type="radio" name="size" id="size"
                                           value="{{ @sizeOption }}">&ensp;{{ @sizeOption }}</label>
     </repeat>
     <br><br>
@@ -30,7 +30,7 @@
 
     <repeat group="{{ @accessories }}" value="{{ @accessoryOption }}">
         <div class="form-group col">
-            <label><input type="checkbox" name="{{ @accessories }}}" value="{{ @accessoryOption }}"> {{ @accessoryOption }}</label>
+            <label><input type="checkbox" name="accessory[]" value="{{ @accessoryOption }}"> {{ @accessoryOption }}</label>
         </div>
     </repeat>
     <br>
