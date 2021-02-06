@@ -52,8 +52,8 @@ $f3->route('GET|POST /order2', function($f3){
     if(isset($_POST['typeOfPet'])){
         $_SESSION['typeOfPet'] = $_POST['typeOfPet'];
     }
-    if(isset($_POST['colors'])){
-        $_SESSION['colors'] = $_POST['colors'];
+    if(isset($_POST['color'])){
+        $_SESSION['color'] = $_POST['color'];
     }
 
     $f3 ->set('sizes', getSizes());
@@ -75,8 +75,8 @@ $f3->route('POST /summary', function(){
         $_SESSION['sizes'] = $_POST['sizes'];
     }
 
-    if(isset($_POST['accessory'])) {
-        $_SESSION['accessory'] = implode(", ", $_POST['accessory']);
+    if(isset($_POST['accessories'])) {
+        $_SESSION['accessories'] = implode(", ", $_POST['accessories']);
     }
 
     //display a view
