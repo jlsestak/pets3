@@ -25,17 +25,15 @@ $f3->route('GET /', function(){
 });
 
 //order route
-$f3->route('GET /order', function($f3){
+$f3->route('GET|POST /order', function($f3){
     //echo "Order Page";
     //Check if the form has been posted
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         //Validate the data
         if (empty($_POST['typeOfPet'])) {
-            $f3->set('colors', '');
+            //...
         } else {
-            $f3->set('colors', 'red');
-            $f3->set('colors', 'green');
-            $f3->set('colors', 'blue');
+            //...
         }
     }
 
@@ -47,7 +45,7 @@ $f3->route('GET /order', function($f3){
 });
 
 //order2 route
-$f3->route('POST /order2', function($f3){
+$f3->route('GET|POST /order2', function($f3){
     //echo "Order Page 2";
     //var_dump($_POST);
     //add data from order page to session array
@@ -72,6 +70,10 @@ $f3->route('POST /order3', function(){
     //add data from form 2 to session array
     if(isset($_POST['petName'])){
         $_SESSION['petName'] = $_POST['petName'];
+    }
+
+    if(isset($_POST['sizes'])){
+        $_SESSION['sizes'] = $_POST['sizes'];
     }
 
     if(isset($_POST['accessory'])){
